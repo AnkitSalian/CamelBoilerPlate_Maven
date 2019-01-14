@@ -1,4 +1,4 @@
-package com.learncamel.routes;
+package com.learncamel.routes.process;
 
 import com.learncamel.routes.process.CamelModifyFileProcessorRoute;
 import org.apache.camel.builder.RouteBuilder;
