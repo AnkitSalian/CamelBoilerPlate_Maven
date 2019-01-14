@@ -1,7 +1,6 @@
 package com.learncamel.routes.xmlxstream;
 
 import com.learncamel.domain.Employee;
-import com.learncamel.xmlxstream.UnmarshalUsingXstream;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.mock.MockEndpoint;
 import org.apache.camel.test.junit4.CamelTestSupport;

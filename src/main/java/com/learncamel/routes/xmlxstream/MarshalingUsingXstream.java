@@ -1,7 +1,6 @@
 package com.learncamel.routes.xmlxstream;
 
 import com.learncamel.domain.Employee;
-import com.learncamel.xmlxstream.CustomProcessorXstream;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.dataformat.XStreamDataFormat;
 
