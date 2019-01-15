@@ -87,6 +87,19 @@
             <version>2.20.1</version>
         </dependency>
 
+        <!--Camel-bindy-->
+        <!-- https://mvnrepository.com/artifact/org.apache.camel/camel-bindy -->
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-bindy</artifactId>
+            <version>2.23.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-bindy</artifactId>
+            <version>2.23.0</version>
+        </dependency>
+
 
     </dependencies>
 
