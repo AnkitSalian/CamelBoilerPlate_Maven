@@ -3,7 +3,7 @@ package com.learncamel.domain;
 import org.apache.camel.dataformat.bindy.annotation.CsvRecord;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
 
-@CsvRecord(separator = ",", skipFirstLine = true)
+@CsvRecord(separator = ",", skipFirstLine = true, generateHeaderColumns = true)
 public class Person {
     @DataField(pos = 1)
     private String id;
