@@ -3,6 +3,8 @@ package com.learncamel.domain;
 import org.apache.camel.dataformat.bindy.annotation.DataField;
 import org.apache.camel.dataformat.bindy.annotation.FixedLengthRecord;
 
+import java.time.LocalDate;
+
 @FixedLengthRecord(ignoreTrailingChars = true)
 public class PersonWithFixedLength {
 
@@ -15,14 +17,8 @@ public class PersonWithFixedLength {
     @DataField(pos = 3, length = 8)
     private String role;
 
-    @Override
-    public String toString() {
-        return "PersonWithFixedLength{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", role='" + role + '\'' +
-                '}';
-    }
+    @DataField(pos = 4, length = 9, pattern = "ddMMMyyyy")
+    private LocalDate date;
 
     public String getId() {
         return id;
@@ -46,5 +42,23 @@ public class PersonWithFixedLength {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "PersonWithFixedLength{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", role='" + role + '\'' +
+                ", date=" + date +
+                '}';
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
     }
 }
