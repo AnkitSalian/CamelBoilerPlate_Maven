@@ -24,7 +24,7 @@ public class PersonWithFixedLength {
     @DataField(pos=5, delimiter = "^")
     private int age;
 
-    @DataField(pos=6,length = 6, precision = 2)
+    @DataField(pos=6,length = 8, precision = 2)
     private BigDecimal salary;
 
     public String getId() {
