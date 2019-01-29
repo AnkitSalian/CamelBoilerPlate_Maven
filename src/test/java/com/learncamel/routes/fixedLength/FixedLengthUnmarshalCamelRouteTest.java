@@ -28,6 +28,8 @@ public class FixedLengthUnmarshalCamelRouteTest extends CamelTestSupport {
         LocalDate expectedDate1 =  LocalDate.of(2018,01,28);
         assertEquals(expectedDate.getYear(),personWithFixedLengthList.get(0).getDate().getYear());
         assertEquals(expectedDate1.getYear(),personWithFixedLengthList.get(1).getDate().getYear());
+        assertEquals("24",personWithFixedLengthList.get(0).getAge());
+        assertEquals("54",personWithFixedLengthList.get(1).getAge());
 
     }
 
