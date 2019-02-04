@@ -26,4 +26,13 @@ public class OnExceptionHandlerRouteTest extends CamelTestSupport {
         System.out.println("Response is===>"+response);
         assertEquals(expectedOutput,response);
     }
+
+    @Test
+    public void onExceptionCheckIgnore(){
+        String request = null;
+        String expectedOutput = null;
+        final String response = template.requestBody("direct:exception",request,String.class);
+        System.out.println("Response is===>"+response);
+        assertEquals(expectedOutput,response);
+    }
 }

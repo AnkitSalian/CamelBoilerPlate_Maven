@@ -15,10 +15,14 @@ public class OnExceptionHandlerRoute extends RouteBuilder {
         //onException(SQLException.class).log(LoggingLevel.ERROR,"Exception in Bean caught here");
 
         //With Re-delivery and redleivery delay
-         //onException(RuntimeException.class,Exception.class).maximumRedeliveries(2).redeliveryDelay(5000).backOffMultiplier(2).log(LoggingLevel.WARN, "Exception in Processor caught here");
+        //onException(RuntimeException.class,Exception.class).maximumRedeliveries(2).redeliveryDelay(5000).backOffMultiplier(2).log(LoggingLevel.WARN, "Exception in Processor caught here");
 
         //with Redelivery and Handled
-        onException(RuntimeException.class).handled(true).maximumRedeliveries(2).delay(2000).process(new GenerateErrorResponseProcessor()).log(LoggingLevel.WARN, "Exception in Processor caught here");
+        //onException(RuntimeException.class).handled(true).maximumRedeliveries(2).delay(2000).process(new GenerateErrorResponseProcessor()).log(LoggingLevel.WARN, "Exception in Processor caught here");
+
+        //Ignoring Exception:
+        //You cant use continued and handled in the same route.
+        onException(RuntimeException.class).continued(true).log(LoggingLevel.WARN, "Exception in Processor caught here");
 
         from("direct:exception")
                 .bean(new DataModifier(),"mapOnException")
