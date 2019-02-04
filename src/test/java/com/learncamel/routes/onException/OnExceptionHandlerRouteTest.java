@@ -17,4 +17,13 @@ public class OnExceptionHandlerRouteTest extends CamelTestSupport {
         final String response = template.requestBody("direct:exception",request,String.class);
 
     }
+
+    @Test
+    public void onExceptionCheckHandled(){
+        String request = null;
+        String expectedOutput = "Exception happened in the route";
+        final String response = template.requestBody("direct:exception",request,String.class);
+        System.out.println("Response is===>"+response);
+        assertEquals(expectedOutput,response);
+    }
 }
