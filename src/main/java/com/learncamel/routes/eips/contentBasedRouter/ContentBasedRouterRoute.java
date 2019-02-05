@@ -15,6 +15,8 @@ public class ContentBasedRouterRoute extends RouteBuilder {
                     .when(header("CamelFileNameConsumed").endsWith(".json"))
                         .to("file:data/json")
                     .otherwise()
-                        .to("file:data/others");
+                        .to("file:data/others").stop()//stop is used to restrict this file to send in downstream
+                    .end()
+                        .to("file:data/all");
     }
 }
